@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: search-service
-        image: kiran437/search:0.$BUILD_NUMBER
+        image: djspys/search:0.$BUILD_NUMBER
         ports:
         - containerPort: 8090
 
@@ -72,7 +72,7 @@ spec:
     spec:
       containers:
       - name: website-service
-        image: kiran437/website:0.$BUILD_NUMBER
+        image: djspys/website:0.$BUILD_NUMBER
         ports:
         - containerPort: 8001
 
