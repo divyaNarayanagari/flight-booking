@@ -42,9 +42,9 @@ pipeline {
 		stage ("Pushing-Images-to-Registry"){
 			steps {
 				
-				sh "docker push Djspys/search:0.${env.BUILD_ID}"
+				sh "docker push djspys/search:0.${env.BUILD_ID}"
 				
-				sh "docker push Djspys/website:0.${env.BUILD_ID}"
+				sh "docker push djspys/website:0.${env.BUILD_ID}"
 			}
 		}
 		stage('DeployToProduction') {
