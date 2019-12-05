@@ -14,7 +14,7 @@ pipeline {
 		stage ("Docker-Login") {
 			steps {
 				
-				sh 'docker login -u Djspys -p Djspys@123'
+				sh 'docker login -u djspys -p Djspys@123'
 			}
 		}
 		stage ("Deleting-Previous-Docker-Builds"){
@@ -34,9 +34,9 @@ pipeline {
 		stage ("Tagging-docker-images") {
 			steps {
 				
-				sh "docker tag search:0.${env.BUILD_ID} Djspys/search:0.${env.BUILD_ID}"
+				sh "docker tag search:0.${env.BUILD_ID} djspys/search:0.${env.BUILD_ID}"
 				
-				sh "docker tag website:0.${env.BUILD_ID} Djspys7/website:0.${env.BUILD_ID}"
+				sh "docker tag website:0.${env.BUILD_ID} djspys7/website:0.${env.BUILD_ID}"
 			}
 		}
 		stage ("Pushing-Images-to-Registry"){
