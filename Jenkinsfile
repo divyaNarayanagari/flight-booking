@@ -36,7 +36,7 @@ pipeline {
 				
 				sh "docker tag search:0.${env.BUILD_ID} djspys/search:0.${env.BUILD_ID}"
 				
-				sh "docker tag website:0.${env.BUILD_ID} djspys7/website:0.${env.BUILD_ID}"
+				sh "docker tag website:0.${env.BUILD_ID} djspys/website:0.${env.BUILD_ID}"
 			}
 		}
 		stage ("Pushing-Images-to-Registry"){
