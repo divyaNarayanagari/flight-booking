@@ -14,7 +14,7 @@ pipeline {
 		stage ("Docker-Login") {
 			steps {
 				
-				sh 'docker login -u kiran437 -p Kiran@123'
+				sh 'docker login -u Djspys -p Djspys@123'
 			}
 		}
 		stage ("Deleting-Previous-Docker-Builds"){
@@ -34,17 +34,17 @@ pipeline {
 		stage ("Tagging-docker-images") {
 			steps {
 				
-				sh "docker tag search:0.${env.BUILD_ID} kiran437/search:0.${env.BUILD_ID}"
+				sh "docker tag search:0.${env.BUILD_ID} Djspys/search:0.${env.BUILD_ID}"
 				
-				sh "docker tag website:0.${env.BUILD_ID} kiran437/website:0.${env.BUILD_ID}"
+				sh "docker tag website:0.${env.BUILD_ID} Djspys7/website:0.${env.BUILD_ID}"
 			}
 		}
 		stage ("Pushing-Images-to-Registry"){
 			steps {
 				
-				sh "docker push kiran437/search:0.${env.BUILD_ID}"
+				sh "docker push Djspys/search:0.${env.BUILD_ID}"
 				
-				sh "docker push kiran437/website:0.${env.BUILD_ID}"
+				sh "docker push Djspys/website:0.${env.BUILD_ID}"
 			}
 		}
 		stage('DeployToProduction') {
